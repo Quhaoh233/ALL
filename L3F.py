@@ -20,6 +20,7 @@ name_dict, type_dict, data_dict, poi_density_list = read_dataset.import_data(pat
 
 # input target data
 target_name = target1
+target_num = 0
 target = pd.read_csv('dataset/target/target1.csv')
 target_data = target['RATE'].values.astype('float64')
 target_data = torch.as_tensor(target_data, device=device).float()
@@ -27,7 +28,7 @@ target_type = 'res'
 target_poi_density = 12
 
 # _____________________ Selector ____________________
-select_dict = selector.Eq_selector(data_dict)    # Equivalent Selector as A3C-Selector (RL)
+select_dict = selector.Eq_selector(data_dict, target_num)    # Equivalent Selector as A3C-Selector (RL)
 # select_dict = selector.RL_selector(target_type, target_poi_density, data_dict, federation_state)
 # select_dict = selector.type_selector(target_type, type_dict, data_dict)
 # select_dict = selector.random_selector(data_dict)
