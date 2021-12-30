@@ -7,9 +7,9 @@ Abstract: Parking occupancy prediction (POP) can be used in many real-time parki
 
 
 <div align="center"><img src="https://user-images.githubusercontent.com/49360609/147719583-a9787950-635d-4015-b1e2-2ed145260ab4.jpg" width="800"/>
-<div/>
+</div>
 <div align="center">The overall structure of L3F
-<div/>
+</div>
 
   
 You can simply reproduce the testing results by running 'L3F.py'.
