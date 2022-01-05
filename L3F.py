@@ -14,14 +14,14 @@ import csv
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # ______________________ pre ______________________________
 # input federation data
-path = 'dataset\occupancies'
+path = 'occupancies'
 name_dict, type_dict, data_dict, poi_density_list = read_dataset.import_data(path)
 
 
 # input target data
 target_name = "target1"
 target_num = 0
-target = pd.read_csv('dataset/target/target1.csv')
+target = pd.read_csv('target/target1.csv')
 target_data = target['RATE'].values.astype('float64')
 target_data = torch.as_tensor(target_data, device=device).float()
 target_type = 'res'
