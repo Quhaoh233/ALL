@@ -206,16 +206,15 @@ for t in range(times):
 output_matrix = output_matrix.detach().numpy()
 # output loss
 output = output_matrix
-f = open('result/RL_target1_output_matrix.csv', 'w', newline='')
+f = open('result/L3F_target1_metrics.csv', 'w', newline='')
 csv_writer = csv.writer(f)
 for l in output:
     csv_writer.writerow(l)
 f.close()
 
-occ_list = occ_list.detach().numpy()
 # output loss
 output = occ_list
-f = open('result/L3F_target4_occupancy.csv', 'w', newline='')
+f = open('result/L3F_target1_occupancy.csv', 'w', newline='')
 csv_writer = csv.writer(f)
 for l in output:
     csv_writer.writerow(l)
