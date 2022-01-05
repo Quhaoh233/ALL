@@ -42,6 +42,7 @@ occ_list = np.zeros([test_size, times])
 output_matrix = torch.zeros([test_epoch_num, times*6])
 
 for t in range(times):
+    print('time =', t)
     # instantiation
     net = MyNet.MyLSTMNet(input_size=1, hidden_size=1, seq_len=6, output_size=1, num_layers=1).to(device)
     loss_function = torch.nn.MSELoss()
@@ -75,6 +76,8 @@ for t in range(times):
             temp_num += 1
     # outer loop
     for epoch in range(pre_training_epoch_num):
+        if (epoch+1) % 10 == 0:
+            print('pre_training_epoch =', epoch+1, '/200')
         # gradient matrix
         gradient = dict()
         temp_num = 0
