@@ -14,7 +14,7 @@ test_batch_size = 1
 action_number = 4060
 state_number = 30
 sample_PATH = 'dataset/RL_samples.csv'
-information_PATH = 'dataset/information.csv'
+information_PATH = 'dataset/occupancies/information.csv'
 cuda0 = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 eps = np.finfo(float).eps
 
