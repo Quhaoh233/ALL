@@ -72,7 +72,6 @@ class MyBiLSTMNet(nn.Module):
         return x
 
 class Actor(nn.Module):
-    # 离散空间采用了 softmax policy 来参数化策略
     def __init__(self, output_size):
         super(Actor, self).__init__()
         self.feature_net = nn.Linear(2, 1)
@@ -105,7 +104,6 @@ class Actor(nn.Module):
         return F.softmax(action_scores, dim=1)
 
 class Critic(nn.Module):
-    # 离散空间采用了 softmax policy 来参数化策略
     def __init__(self):
         super(Critic, self).__init__()
         self.feature_net = nn.Linear(2, 1)
