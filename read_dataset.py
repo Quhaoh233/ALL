@@ -27,7 +27,7 @@ def import_data(path):
         data = data.to(device)
         data_dict[n] = data
 
-    information = pd.read_csv('dataset/information.csv')
+    information = pd.read_csv('information.csv')
     poi_density_list = information['POI_DENSITY'].values.astype('float64')
     poi_density_list = torch.tensor(poi_density_list).float()
     poi_density_list = poi_density_list.to(device)
