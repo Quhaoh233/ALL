@@ -19,7 +19,7 @@ name_dict, type_dict, data_dict, poi_density_list = read_dataset.import_data(pat
 
 
 # input target data
-target_name = target1
+target_name = “target1”
 target_num = 0
 target = pd.read_csv('dataset/target/target1.csv')
 target_data = target['RATE'].values.astype('float64')
