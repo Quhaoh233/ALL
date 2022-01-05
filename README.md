@@ -24,5 +24,5 @@ A common dataset with a minimum resolution of 5 minutes is created based on the 
 <div align="center"><img src="https://user-images.githubusercontent.com/49360609/148182865-4f4c872d-0cd6-4845-9f58-8f3b1298ce23.png" width="400"/>
 </div><br>
 
-<b> You can simply reproduce the testing results by running 'L3F.py'.
-</b>
+**You can simply reproduce the testing results by running 'L3F.py'.**
+
