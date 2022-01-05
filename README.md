@@ -11,3 +11,10 @@ Abstract: Parking occupancy prediction (POP) can be used in many real-time parki
 </div><br>
   
 You can simply reproduce the testing results by running 'L3F.py'.
+
+___________________________ case study __________________________
+
+<div align="center"><img src="https://user-images.githubusercontent.com/49360609/148180675-41fc13b7-9a1d-46cf-9ffe-e633f2048804.jpg" width="800"/>
+</div>
+<div align="center">Spatial information for parking lots: (a) Map of parking lots distribution; (b) Heat map of POI kernel density.
+</div><br>
