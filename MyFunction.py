@@ -1,4 +1,9 @@
 import numpy as np
+import torch
+
+state_num = 30
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+eps = 0.000001 # a minimize value
 
 def build_action_dict_fn():
     action_dict = dict()
@@ -27,7 +32,7 @@ def build_state(state_i, type_l, poi_density_l):
     state_pd = target_pd / (SE + eps)
     state_pd = torch.as_tensor(state_pd)
     state_pd = torch.reshape(state_pd, [len(state_pd), 1])
-    state_t = torch.zeros([state_number, 1], device=cuda0)
+    state_t = torch.zeros([state_number, 1], device=device)
     for i in range(state_number):
         if target_t == type_l[i]:
             state_t[i] = 1
