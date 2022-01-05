@@ -10,10 +10,9 @@ Abstract: Parking occupancy prediction (POP) can be used in many real-time parki
 <div align="center">Fig. 1. The overall structure of L3F
 </div><br>
   
-You can simply reproduce the testing results by running 'L3F.py'.
 
 <div align="center">___________________________ case study __________________________
-</div></div>
+</div><br>
 
 A common dataset with a minimum resolution of 5 minutes is created based on the parking occupancy data of 34 parking lots located in Guangzhou, China, from June 1 to 30, 2018. There are four parking occupancy prediction tasks with only 6 days parking records (June 19-24). The external condition that can be used is a federation with 30 members, who have more records but unwilling to share. The objective is to predict the parking occupancy in 30 minutes as accurately as possible in the last six days (25-30) of June 2018.
 
@@ -23,4 +22,6 @@ A common dataset with a minimum resolution of 5 minutes is created based on the 
 </div><br>
 
 <div align="center"><img src="https://user-images.githubusercontent.com/49360609/148182865-4f4c872d-0cd6-4845-9f58-8f3b1298ce23.png" width="400"/>
-</div>
+</div><br>
+
+You can simply reproduce the testing results by running 'L3F.py'.
