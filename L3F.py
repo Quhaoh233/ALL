@@ -203,6 +203,11 @@ for t in range(times):
 
 
 # ________________ output ______________________________________
+print('RMSE =', RMSE)
+print('MAPE =', MAPE)
+print('R2 =', R2_score)
+print('RAE =', RAE)
+
 output_matrix = output_matrix.detach().numpy()
 # output loss
 output = output_matrix
