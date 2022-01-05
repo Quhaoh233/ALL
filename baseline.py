@@ -23,7 +23,7 @@ occ_list = np.zeros([test_size, times])
 
 for t in range(times):
     # init network
-    net = MyNet.MyLSTMNet(input_size=1, hidden_size=1, seq_len=6, output_size=1, num_layers=1).to(device)
+    net = MyNet.MyLSTMNet(input_size=1, hidden_size=1, seq_len=6, output_size=1, num_layers=1).to(device)  # Choose baseline net
     loss_function = torch.nn.MSELoss()
     optimizer = torch.optim.Adam(net.parameters(), lr=0.02)
 
@@ -107,7 +107,7 @@ output_matrix = output_matrix.detach().numpy()
 
 # output loss
 output = output_matrix
-f = open('result/target4_metrics.csv', 'w', newline='')
+f = open('result/Baseline_target4_metrics.csv', 'w', newline='')
 csv_writer = csv.writer(f)
 for l in output:
     csv_writer.writerow(l)
@@ -115,7 +115,7 @@ f.close()
 
 # output loss
 output = occ_list
-f = open('result/LSTM_target1_metrics.csv', 'w', newline='')
+f = open('result/Baseline_target1_occupancy.csv', 'w', newline='')
 csv_writer = csv.writer(f)
 for l in output:
     csv_writer.writerow(l)
