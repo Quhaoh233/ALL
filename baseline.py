@@ -10,7 +10,7 @@ import numpy as np
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 # input data
-input_data = pd.read_csv('dataset/target/target4.csv')
+input_data = pd.read_csv('target/target4.csv')
 target = input_data['RATE'].values.astype('float64')
 target = torch.as_tensor(target, device=device).float()
 
@@ -97,6 +97,12 @@ for t in range(times):
 
     occ_list[:, t] = output
 
+# print final metrics
+print('RMSE =', RMSE)
+print('MAPE =', MAPE)
+print('R2 =', R2_score)
+print('RAE =', RAE)
+
 output_matrix = output_matrix.detach().numpy()
 
 # output loss
@@ -107,7 +113,6 @@ for l in output:
     csv_writer.writerow(l)
 f.close()
 
-occ_list = occ_list.detach().numpy()
 # output loss
 output = occ_list
 f = open('result/LSTM_target1_metrics.csv', 'w', newline='')
