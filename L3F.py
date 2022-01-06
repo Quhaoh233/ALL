@@ -77,7 +77,7 @@ for t in range(times):
     # outer loop
     for epoch in range(pre_training_epoch_num):
         if (epoch+1) % 10 == 0:
-            print('pre_training_epoch =', epoch+1, '/200')
+            print('pre_training_epoch =', epoch+1, '/', pre_training_epoch_num)
         # gradient matrix
         gradient = dict()
         temp_num = 0
@@ -153,6 +153,8 @@ for t in range(times):
 
     for epoch in range(test_epoch_num):
         # fine-tuning
+        if (epoch+1) % 10 == 0:
+            print('test_epoch =', epoch+1, '/', test_epoch_num)
         for i, support in enumerate(support_loader):
             support_sample, support_label = support
             optimizer.zero_grad()
