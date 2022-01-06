@@ -1,3 +1,11 @@
+Dataset
 TIME: June 1-30, 2018, the interval is 5 minutes.
 NUMBER: Number of vehicles in the parking facility at time TIME.
 OCCUPANCY: is the number of vehicles divided by parking capacity of the parking lot.
+
+Information
+NAME: the identity of the parking lot.
+GPSX, GPSY: latitude and longitude.
+TYPE: the type of the parking lot according to the building it serves.
+POI_DENSITY: the heatmap density of the point of interest (POI).
+NUM_SPACE: the capacity of the parking lot.
