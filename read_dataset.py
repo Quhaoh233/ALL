@@ -22,7 +22,7 @@ def import_data(path):
         name_dict[n] = npath[(len(path)+1):(npath.rfind('csv')-1)]
         type_name_dict[n] = npath[(len(path)+1):(len(path)+4)]
         temp = pd.read_csv(npath)
-        data = temp['RATE'].values.astype('float64')
+        data = temp['OCCUPANCY'].values.astype('float64')
         data = torch.tensor(data).float()
         data = data.to(device)
         data_dict[n] = data
