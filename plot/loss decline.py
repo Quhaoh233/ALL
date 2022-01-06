@@ -4,7 +4,7 @@ import numpy as np
 
 # input
 # target1
-Target1 = pd.read_csv('loss/target1.csv')
+Target1 = pd.read_csv('loss/target1_loss.csv')
 L3F_RMSE_target1 = Target1['RMSE'].values.astype('float64')
 L3F_MAPE_target1 = Target1['MAPE'].values.astype('float64')
 L3F_R2_target1 = Target1['R2'].values.astype('float64')
@@ -12,7 +12,7 @@ L3F_RAE_target1 = Target1['RAE'].values.astype('float64')
 L3F_TRAIN_target1 = Target1['TRAIN'].values.astype('float64')
 L3F_TEST_target1 = Target1['TEST'].values.astype('float64')
 
-Target1_baseline = pd.read_csv('loss/target1_baseline.csv')
+Target1_baseline = pd.read_csv('loss/target1_loss_baseline.csv')
 L3F_RMSE_target1_baseline = Target1_baseline['RMSE'].values.astype('float64')
 L3F_MAPE_target1_baseline = Target1_baseline['MAPE'].values.astype('float64')
 L3F_R2_target1_baseline = Target1_baseline['R2'].values.astype('float64')
@@ -21,7 +21,7 @@ L3F_TRAIN_target1_baseline = Target1_baseline['TRAIN'].values.astype('float64')
 L3F_TEST_target1_baseline = Target1_baseline['TEST'].values.astype('float64')
 
 # target2
-Target2 = pd.read_csv('loss/target2.csv')
+Target2 = pd.read_csv('loss/target2_loss.csv')
 L3F_RMSE_target2 = Target2['RMSE'].values.astype('float64')
 L3F_MAPE_target2 = Target2['MAPE'].values.astype('float64')
 L3F_R2_target2 = Target2['R2'].values.astype('float64')
@@ -29,7 +29,7 @@ L3F_RAE_target2 = Target2['RAE'].values.astype('float64')
 L3F_TRAIN_target2 = Target2['TRAIN'].values.astype('float64')
 L3F_TEST_target2 = Target2['TEST'].values.astype('float64')
 
-Target2_baseline = pd.read_csv('loss/target1_baseline.csv')
+Target2_baseline = pd.read_csv('loss/target2_loss_baseline.csv')
 L3F_RMSE_target2_baseline = Target2_baseline['RMSE'].values.astype('float64')
 L3F_MAPE_target2_baseline = Target2_baseline['MAPE'].values.astype('float64')
 L3F_R2_target2_baseline = Target2_baseline['R2'].values.astype('float64')
@@ -38,7 +38,7 @@ L3F_TRAIN_target2_baseline = Target2_baseline['TRAIN'].values.astype('float64')
 L3F_TEST_target2_baseline = Target2_baseline['TEST'].values.astype('float64')
 
 # target3
-Target3 = pd.read_csv('loss/target3.csv')
+Target3 = pd.read_csv('loss/target3_loss.csv')
 L3F_RMSE_target3 = Target3['RMSE'].values.astype('float64')
 L3F_MAPE_target3 = Target3['MAPE'].values.astype('float64')
 L3F_R2_target3 = Target3['R2'].values.astype('float64')
@@ -46,7 +46,7 @@ L3F_RAE_target3 = Target3['RAE'].values.astype('float64')
 L3F_TRAIN_target3 = Target3['TRAIN'].values.astype('float64')
 L3F_TEST_target3 = Target3['TEST'].values.astype('float64')
 
-Target3_baseline = pd.read_csv('loss/target1_baseline.csv')
+Target3_baseline = pd.read_csv('loss/target3_loss_baseline.csv')
 L3F_RMSE_target3_baseline = Target3_baseline['RMSE'].values.astype('float64')
 L3F_MAPE_target3_baseline = Target3_baseline['MAPE'].values.astype('float64')
 L3F_R2_target3_baseline = Target3_baseline['R2'].values.astype('float64')
@@ -55,7 +55,7 @@ L3F_TRAIN_target3_baseline = Target3_baseline['TRAIN'].values.astype('float64')
 L3F_TEST_target3_baseline = Target3_baseline['TEST'].values.astype('float64')
 
 # target4
-Target4 = pd.read_csv('loss/target1.csv')
+Target4 = pd.read_csv('loss/target4_loss.csv')
 L3F_RMSE_target4 = Target4['RMSE'].values.astype('float64')
 L3F_MAPE_target4 = Target4['MAPE'].values.astype('float64')
 L3F_R2_target4 = Target4['R2'].values.astype('float64')
@@ -63,7 +63,7 @@ L3F_RAE_target4 = Target4['RAE'].values.astype('float64')
 L3F_TRAIN_target4 = Target4['TRAIN'].values.astype('float64')
 L3F_TEST_target4 = Target4['TEST'].values.astype('float64')
 
-Target4_baseline = pd.read_csv('loss/target1_baseline.csv')
+Target4_baseline = pd.read_csv('loss/target4_loss_baseline.csv')
 L3F_RMSE_target4_baseline = Target4_baseline['RMSE'].values.astype('float64')
 L3F_MAPE_target4_baseline = Target4_baseline['MAPE'].values.astype('float64')
 L3F_R2_target4_baseline = Target4_baseline['R2'].values.astype('float64')
