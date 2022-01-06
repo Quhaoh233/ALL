@@ -48,7 +48,6 @@ for t in range(times):
         # fine-tuning
         for i, support in enumerate(support_loader):
             support_sample, support_label = support
-            support_sample = MyFunction.positional_encoding(support_sample, num_features=1)
             optimizer.zero_grad()
             output = net(support_sample)
             output = torch.squeeze(output)
@@ -60,7 +59,6 @@ for t in range(times):
         for i, query in enumerate(query_loader):
             query_sample, query_label = query
             optimizer.zero_grad()
-            query_sample = MyFunction.positional_encoding(query_sample, num_features=1)
             output = net(query_sample)
             output = torch.squeeze(output)
             loss = loss_function(output, query_label)
@@ -107,7 +105,7 @@ output_matrix = output_matrix.detach().numpy()
 
 # output loss
 output = output_matrix
-f = open('result/Baseline_target4_metrics.csv', 'w', newline='')
+f = open('result/Baseline_target1_metrics.csv', 'w', newline='')
 csv_writer = csv.writer(f)
 for l in output:
     csv_writer.writerow(l)
