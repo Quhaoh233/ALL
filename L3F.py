@@ -42,7 +42,7 @@ occ_list = np.zeros([test_size, times])
 output_matrix = torch.zeros([test_epoch_num, times*6])
 
 for t in range(times):
-    print('time =', t)
+    print('time =', t+1)
     # instantiation
     net = MyNet.MyLSTMNet(input_size=1, hidden_size=1, seq_len=6, output_size=1, num_layers=1).to(device)
     loss_function = torch.nn.MSELoss()
@@ -203,6 +203,7 @@ for t in range(times):
 
 
 # ________________ output ______________________________________
+print(target_name, ' result')
 print('RMSE =', RMSE)
 print('MAPE =', MAPE)
 print('R2 =', R2_score)
