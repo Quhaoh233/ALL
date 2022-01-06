@@ -15,8 +15,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 # hyper params
 action_number = 4060
-state_num = 4
-num = 1
+state_num = 30
 
 # input data
 path = 'members'
@@ -33,8 +32,8 @@ def reward_fn(target, action_index):
         if action[i] == 1:
             select_dict[temp] = data_dict[i]
             temp += 1
-    ori_ta = meta_learner.FOMAML_training(select_dict, 20)
-    MAPE = meta_learner.Testing(target_data, ori_ta, 10)
+    ori_ta = meta_learner.FOMAML_training(select_dict, 20)  # pretraining epochs = 20
+    MAPE = meta_learner.Testing(target_data, ori_ta, 10)  # pretraining epochs = 10
     reward = MAPE
     return reward
 
@@ -62,29 +61,25 @@ actor_optimizer = optim.Adam(actor_net.parameters(), lr=1e-2)
 
 
 for training_comer in range(state_num):
-    state = build_state((training_comer+12), type_dict, poi_density_list)
+    state = build_state((training_comer), type_dict, poi_density_list)
     state = state.to(device)
-    target_data = data_dict[(training_comer+12)]
+    target_data = data_dict[(training_comer)]
     state = torch.reshape(state, [len(state), 2])
-    R_list = torch.zeros([action_number])
+    R_list = torch.zeros([action_number, 1])
     R_list = R_list.to(device)
     for action_index in range(action_number):
         start_time = clock.time()
-        print('state:', (training_comer+12), 'action:', action_index)
+        print('state:', (training_comer), 'action:', action_index)
         # compute reward
-        reward_list = []
-        for n in range(num):
-            # (state, action, reward)
-            temp_reward = reward_fn(target_data, action_index)
-            reward_list.append(temp_reward)
+        temp_reward = reward_fn(target_data, action_index)
         actor_net.action_index_list.append(action_index)
-        reward = 15 - np.mean(reward_list)  # bias = 15
+        reward = 15 - temp_reward  # bias = 15
         R_list[action_index] = reward
         actor_net.reward_list.append(reward)
-        actor_net.state_list.append((training_comer+12))
+        actor_net.state_list.append((training_comer))
         end_time = clock.time()
         time = end_time - start_time
-        print(time)
+        print("sample time =", time, 's')
 
     # output sample
     sample_state = np.reshape(actor_net.state_list, (-1, 1))
