@@ -11,7 +11,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 # input data
 input_data = pd.read_csv('target/target4.csv')
-target = input_data['RATE'].values.astype('float64')
+target = input_data['OCCUPANCY'].values.astype('float64')
 target = torch.as_tensor(target, device=device).float()
 
 epoch_num = 400
