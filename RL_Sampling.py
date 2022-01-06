@@ -19,7 +19,7 @@ state_num = 4
 num = 1
 
 # input data
-path = 'dataset\Occupancies'
+path = 'members'
 name_dict, type_dict, data_dict, poi_density_list = read_dataset.import_data(path)
 eps = np.finfo(np.float32).eps.item()
 
@@ -92,7 +92,7 @@ for training_comer in range(state_num):
     sample_reward = np.reshape(actor_net.reward_list, (-1, 1))
     sample = np.concatenate((sample_state, sample_action_index, sample_reward), axis=1)
     output_list = sample
-    f = open('cuda3_sample.csv', 'w', newline='')
+    f = open('sample.csv', 'w', newline='')
     csv_writer = csv.writer(f)
     for l in output_list:
         csv_writer.writerow(l)
