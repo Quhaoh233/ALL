@@ -9,7 +9,7 @@ from torch.utils.data import DataLoader, Dataset
 from torchvision import transforms
 import csv
 
-device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 
 # instantiation
@@ -160,4 +160,4 @@ def Testing(target, ori_ta, test_epoch_num):
     fine_tuning_loss_list = fine_tuning_loss_list.detach().numpy()
     test_loss_list = test_loss_list.detach().numpy()
 
-    return RMSE, MAPE, R2_score, RAE, fine_tuning_loss_list, test_loss_list
+    return MAPE
