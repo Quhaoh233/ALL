@@ -10,7 +10,7 @@ import numpy as np
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 # input data
-input_data = pd.read_csv('target/target4.csv')
+input_data = pd.read_csv('target/target1.csv')
 target = input_data['OCCUPANCY'].values.astype('float64')
 target = torch.as_tensor(target, device=device).float()
 
@@ -45,6 +45,8 @@ for t in range(times):
     RAE_list = torch.zeros([epoch_num])
 
     for epoch in range(epoch_num):
+        if (epoch+1) % 10 == 0:
+            print("epoch_num =", epoch+1, "/", epoch_num)
         # fine-tuning
         for i, support in enumerate(support_loader):
             support_sample, support_label = support
