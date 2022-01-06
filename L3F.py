@@ -22,7 +22,7 @@ name_dict, type_dict, data_dict, poi_density_list = read_dataset.import_data(pat
 target_name = "target1"
 target_num = 0
 target = pd.read_csv('target/target1.csv')
-target_data = target['RATE'].values.astype('float64')
+target_data = target['OCCUPANCY'].values.astype('float64')
 target_data = torch.as_tensor(target_data, device=device).float()
 target_type = 'res'
 target_poi_density = 12
