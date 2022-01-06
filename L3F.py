@@ -14,7 +14,7 @@ import csv
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # ______________________ pre ______________________________
 # input federation data
-path = 'occupancies'
+path = 'members'
 name_dict, type_dict, data_dict, poi_density_list = read_dataset.import_data(path)
 
 
