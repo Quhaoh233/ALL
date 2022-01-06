@@ -3,86 +3,86 @@ import matplotlib.pyplot as plt
 
 # ________________ import data _________________________
 # MAPE
-target1 = pd.read_csv('boxplot/target1_lstm.csv')
+target1 = pd.read_csv('boxplot/target1_MAPE.csv')
 target1_RL = target1['RL'].values.astype('float32')
 target1_Random = target1['Random'].values.astype('float32')
 target1_Baseline = target1['Baseline'].values.astype('float32')
 
-target2 = pd.read_csv('boxplot/target2_lstm.csv')
+target2 = pd.read_csv('boxplot/target2_MAPE.csv')
 target2_RL = target2['RL'].values.astype('float32')
 target2_Random = target2['Random'].values.astype('float32')
 target2_Baseline = target2['Baseline'].values.astype('float32')
 
-target3 = pd.read_csv('boxplot/target3_lstm.csv')
+target3 = pd.read_csv('boxplot/target3_MAPE.csv')
 target3_RL = target3['RL'].values.astype('float32')
 target3_Random = target3['Random'].values.astype('float32')
 target3_Baseline = target3['Baseline'].values.astype('float32')
 
-target4 = pd.read_csv('boxplot/target4_lstm.csv')
+target4 = pd.read_csv('boxplot/target4_MAPE.csv')
 target4_RL = target4['RL'].values.astype('float32')
 target4_Random = target4['Random'].values.astype('float32')
 target4_Baseline = target4['Baseline'].values.astype('float32')
 
 # RMSE
-target1_RMSE = pd.read_csv('boxplot/target1_lstm_RMSE.csv')
+target1_RMSE = pd.read_csv('boxplot/target1_RMSE.csv')
 target1_RL_RMSE = target1_RMSE['RL'].values.astype('float32')
 target1_Random_RMSE = target1_RMSE['Random'].values.astype('float32')
 target1_Baseline_RMSE = target1_RMSE['Baseline'].values.astype('float32')
 
-target2_RMSE = pd.read_csv('boxplot/target2_lstm_RMSE.csv')
+target2_RMSE = pd.read_csv('boxplot/target2_RMSE.csv')
 target2_RL_RMSE = target2_RMSE['RL'].values.astype('float32')
 target2_Random_RMSE = target2_RMSE['Random'].values.astype('float32')
 target2_Baseline_RMSE = target2_RMSE['Baseline'].values.astype('float32')
 
-target3_RMSE = pd.read_csv('boxplot/target3_lstm_RMSE.csv')
+target3_RMSE = pd.read_csv('boxplot/target3_RMSE.csv')
 target3_RL_RMSE = target3_RMSE['RL'].values.astype('float32')
 target3_Random_RMSE = target3_RMSE['Random'].values.astype('float32')
 target3_Baseline_RMSE = target3_RMSE['Baseline'].values.astype('float32')
 
-target4_RMSE = pd.read_csv('boxplot/target4_lstm_RMSE.csv')
+target4_RMSE = pd.read_csv('boxplot/target4_RMSE.csv')
 target4_RL_RMSE = target4_RMSE['RL'].values.astype('float32')
 target4_Random_RMSE = target4_RMSE['Random'].values.astype('float32')
 target4_Baseline_RMSE = target4_RMSE['Baseline'].values.astype('float32')
 
 # R2
 # MAPE
-target1_R2 = pd.read_csv('boxplot/target1_lstm_R2.csv')
+target1_R2 = pd.read_csv('boxplot/target1_R2.csv')
 target1_RL_R2 = target1_R2['RL'].values.astype('float32')
 target1_Random_R2 = target1_R2['Random'].values.astype('float32')
 target1_Baseline_R2 = target1_R2['Baseline'].values.astype('float32')
 
-target2_R2 = pd.read_csv('boxplot/target2_lstm_R2.csv')
+target2_R2 = pd.read_csv('boxplot/target2_R2.csv')
 target2_RL_R2 = target2_R2['RL'].values.astype('float32')
 target2_Random_R2 = target2_R2['Random'].values.astype('float32')
 target2_Baseline_R2 = target2_R2['Baseline'].values.astype('float32')
 
-target3_R2 = pd.read_csv('boxplot/target3_lstm_R2.csv')
+target3_R2 = pd.read_csv('boxplot/target3_R2.csv')
 target3_RL_R2 = target3_R2['RL'].values.astype('float32')
 target3_Random_R2 = target3_R2['Random'].values.astype('float32')
 target3_Baseline_R2 = target3_R2['Baseline'].values.astype('float32')
 
-target4_R2 = pd.read_csv('boxplot/target4_lstm_R2.csv')
+target4_R2 = pd.read_csv('boxplot/target4_R2.csv')
 target4_RL_R2 = target4_R2['RL'].values.astype('float32')
 target4_Random_R2 = target4_R2['Random'].values.astype('float32')
 target4_Baseline_R2 = target4_R2['Baseline'].values.astype('float32')
 
 # RAE
-target1_RAE = pd.read_csv('boxplot/target1_lstm_RAE.csv')
+target1_RAE = pd.read_csv('boxplot/target1_RAE.csv')
 target1_RL_RAE = target1_RAE['RL'].values.astype('float32')
 target1_Random_RAE = target1_RAE['Random'].values.astype('float32')
 target1_Baseline_RAE = target1_RAE['Baseline'].values.astype('float32')
 
-target2_RAE = pd.read_csv('boxplot/target2_lstm_RAE.csv')
+target2_RAE = pd.read_csv('boxplot/target2_RAE.csv')
 target2_RL_RAE = target2_RAE['RL'].values.astype('float32')
 target2_Random_RAE = target2_RAE['Random'].values.astype('float32')
 target2_Baseline_RAE = target2_RAE['Baseline'].values.astype('float32')
 
-target3_RAE = pd.read_csv('boxplot/target3_lstm_RAE.csv')
+target3_RAE = pd.read_csv('boxplot/target3_RAE.csv')
 target3_RL_RAE = target3_RAE['RL'].values.astype('float32')
 target3_Random_RAE = target3_RAE['Random'].values.astype('float32')
 target3_Baseline_RAE = target3_RAE['Baseline'].values.astype('float32')
 
-target4_RAE = pd.read_csv('boxplot/target4_lstm_RAE.csv')
+target4_RAE = pd.read_csv('boxplot/target4_RAE.csv')
 target4_RL_RAE = target4_RAE['RL'].values.astype('float32')
 target4_Random_RAE = target4_RAE['Random'].values.astype('float32')
 target4_Baseline_RAE = target4_RAE['Baseline'].values.astype('float32')
