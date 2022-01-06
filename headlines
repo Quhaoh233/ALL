@@ -1,0 +1,3 @@
+TIME: June 1-30, 2018, the interval is 5 minutes.
+NUMBER: Number of vehicles in the parking facility at time TIME.
+OCCUPANCY: is the number of vehicles divided by parking capacity of the parking lot.
