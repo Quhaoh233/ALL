@@ -9,12 +9,13 @@ class MyGRUNet(nn.Module):
     def __init__(self, input_size, hidden_size, seq_len, output_size, num_layers):
         super().__init__()
         self.backbone = nn.GRU(input_size, hidden_size, num_layers, batch_first=True)  # utilize the GRU model in torch.nn
-        self.fc = nn.Linear(seq_len, output_size)
+       self.fc = nn.Linear(seq_len*hidden_size, output_size)
 
     def forward(self, x):
         # x is input, size (batch, seq, feature)
-        x, _ = self.backbone(x)
-        x = x.transpose(1, 2)
+        x, _ = self.backbone(x) # shape (batch, seq, hidden_size)
+        b, s, h = x.shape
+        x = x.reshape(b, s*h)
         x = self.fc(x)
         return x
 
@@ -22,12 +23,13 @@ class MyLSTMNet(nn.Module):
     def __init__(self, input_size, hidden_size, seq_len, output_size, num_layers):
         super().__init__()
         self.backbone = nn.LSTM(input_size, hidden_size, num_layers, batch_first=True)  # utilize the GRU model in torch.nn
-        self.fc = nn.Linear(seq_len, output_size)
+       self.fc = nn.Linear(seq_len*hidden_size, output_size)
 
     def forward(self, x):
         # x is input, size (batch, seq, feature)
-        x, _ = self.backbone(x)
-        x = x.transpose(1, 2)
+        x, _ = self.backbone(x) # shape (batch, seq, hidden_size)
+        b, s, h = x.shape
+        x = x.reshape(b, s*h)
         x = self.fc(x)
         return x
 
@@ -35,12 +37,13 @@ class MyFCNet(nn.Module):
     def __init__(self, input_size, hidden_size, seq_len, output_size):
         super().__init__()
         self.backbone = nn.Linear(input_size, hidden_size)
-        self.fc = nn.Linear(seq_len, output_size)
+       self.fc = nn.Linear(seq_len*hidden_size, output_size)
 
     def forward(self, x):
         # x is input, size (batch, seq, feature)
-        x = self.backbone(x)
-        x = x.transpose(1, 2)
+        x, _ = self.backbone(x) # shape (batch, seq, hidden_size)
+        b, s, h = x.shape
+        x = x.reshape(b, s*h)
         x = self.fc(x)
         return x
 
@@ -60,14 +63,13 @@ class MyBiLSTMNet(nn.Module):
     def __init__(self, input_size, hidden_size, seq_len, output_size, num_layers):
         super().__init__()
         self.backbone = nn.LSTM(input_size, hidden_size, num_layers, bidirectional=True, batch_first=True)  # utilize the GRU model in torch.nn
-        self.embedding = nn.Linear(hidden_size*2, hidden_size)
-        self.fc = nn.Linear(seq_len, output_size)
+       self.fc = nn.Linear(seq_len*hidden_size*2, output_size)
 
     def forward(self, x):
         # x is input, size (batch, seq, feature)
-        x, _ = self.backbone(x)
-        x = self.embedding(x)
-        x = x.transpose(1, 2)
+        x, _ = self.backbone(x) # shape (batch, seq, hidden_size)
+        b, s, h = x.shape
+        x = x.reshape(b, s*h)
         x = self.fc(x)
         return x
 
